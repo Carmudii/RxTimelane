@@ -461,10 +461,10 @@ public extension Infallible {
             switch event {
             case let .next(element):
                 observer(.next(element))
-            case .error:
-                break
             case .completed:
                 observer(.completed)
+            @unknown default:
+                break
             }
         }
     }
